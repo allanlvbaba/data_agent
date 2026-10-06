@@ -6,7 +6,8 @@ export default defineConfig({
     server: {
         proxy: {
             "/api": {
-                target: "http://localhost:8000",
+                // 8000 被系统僵尸监听占用(WinSock 泄漏),后端迁移至 8001
+                target: "http://127.0.0.1:8001",
                 changeOrigin: true,
                 configure: (proxy) => {
                     proxy.on("proxyReq", (proxyReq) => {

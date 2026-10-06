@@ -36,7 +36,7 @@ ORDER BY 销售额占比 DESC;
 ```mermaid
 flowchart LR
     U[用户浏览器] -->|SSE 流式| FE[前端 Vue3 + Vite :5173]
-    FE -->|POST /api/query| BE[后端 FastAPI :8000]
+    FE -->|POST /api/query| BE[后端 FastAPI :8001]
     BE --> AG[LangGraph Agent 12 节点流水线]
     AG -->|向量召回| QD[(Qdrant :6333)]
     AG -->|字段值全文召回| ES[(Elasticsearch :9200)]
@@ -112,7 +112,7 @@ uv run python -m app.scripts.build_meta_knowledge -c ./conf/meta_config.yaml
 
 # 4. 启动后端(两种方式二选一)
 uv run fastapi dev                                     # 开发热重载
-uv run uvicorn main:app --host 127.0.0.1 --port 8000   # 常规启动
+uv run uvicorn main:app --host 127.0.0.1 --port 8001   # 常规启动
 
 # 5. 启动前端
 cd ../date-agent-frontend
