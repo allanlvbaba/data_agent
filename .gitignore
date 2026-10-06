@@ -1,0 +1,31 @@
+# ===== 环境变量(含真实账密,禁止提交)=====
+**/.env
+!.env.example
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# ===== 日志 =====
+logs/
+
+# ===== 前端 =====
+node_modules/
+dist/
+
+# ===== IDE =====
+.idea/
+.vscode/
+*.iml
+
+# ===== 模型权重(体积大,仅本地放置不入库;获取方式见 README)=====
+data-agent/docker/embedding/**/*.bin
+data-agent/docker/embedding/**/*.safetensors
+data-agent/docker/embedding/**/*.onnx
+data-agent/docker/embedding/**/*.h5
+
+# ===== 其他 =====
+*.zip
+.DS_Store

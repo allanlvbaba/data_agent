@@ -1,0 +1,46 @@
+logging:
+  file:
+    enable: true
+    level: INFO
+    path: logs
+    rotation: "10 MB"
+    retention: "7 days"
+  console:
+    enable: true
+    level: INFO
+
+db_meta:
+  host: localhost
+  port: 3306
+  user: root
+  password: ""    # 敏感信息:从项目根 .env 的 APP_DB_PASSWORD 注入,禁止提交明文账密
+  database: meta
+
+db_dw:
+  host: localhost
+  port: 3306
+  user: root
+  password: ""    # 敏感信息:从项目根 .env 的 APP_DB_PASSWORD 注入,禁止提交明文账密
+  database: dw
+
+qdrant:
+  host: localhost
+  port: 6333
+  embedding_size: 1024
+
+embedding:
+  host: localhost
+  port: 8081
+  model: BAAI/bge-large-zh-v1.5
+
+
+es:
+  host: localhost
+  port: 9200
+  index_name: data_agent
+
+
+llm:
+  model_name: glm-5.3
+  api_key: ""    # 敏感信息:从项目根 .env 的 APP_LLM_API_KEY 注入,禁止提交明文账密
+  base_url: https://open.bigmodel.cn/api/paas/v4/
